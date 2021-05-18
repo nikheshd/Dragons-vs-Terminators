@@ -4,7 +4,7 @@ A tower defense game
 (download the .rar file, extract it and run 'python3 gui.py' from that directory to start the game's webUI)
 
 Note: Don't press restart in the webUI to play again (causing glitches in the UI making terminators move invisibly).
-To restart, exit the game and run gui.py again.
+To restart, refresh the browser.
 
 Storyline of the game:
 
