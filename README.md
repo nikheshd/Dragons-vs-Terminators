@@ -10,7 +10,7 @@ Storyline of the game:
 
 The terminator robots are trying to steal the Dragon eggs and heart of the dragon king. 
 Dragons win if all of the terminators are destroyed. 
-Terminators win if they reach the end end of the tunnel or kill the dragon king. 
+Terminators win if they reach the end of the tunnel or kill the dragon king. 
 The player is expected to place different types of Dragons in the path to protect the dragon colony and destroy the terminators.
 
 Instructions:
@@ -18,7 +18,6 @@ Instructions:
 Each dragon has a food_cost attribute that indicates how much it costs to summon one unit of that type of dragon.
 Terminators arise from Skynet.
 Terminator either moves to the forward if no dragon blocks its path or attack a dragon that blocks its path.
-Water is a place other than skynet and tunnels. Only watersafe dragons and terminators can survive in water.
 
 Dragon types:
 
@@ -54,10 +53,7 @@ Note: By default, all dragons block the path of a Terminator that flies by.
 10. TankDragon: Food=6, Armor=2
 (It is subclass of BodyguardDragon that also deals 1 damage to all terminators in its place each turn)
 
-11. ScubaThrower: Food=6, Armor=1
-(It is subclass of ThrowerDragon and also watersafe)
-
-12. DragonKing: Food=7, Armor=1
-(King is a watersafe dragon that doubles the damage of all the dragons behind him each time he performs an action. Once a dragon's damage has been doubled, it is not doubled again for subsequent turns.)
+11. DragonKing: Food=7, Armor=1
+(King doubles the damage of all the dragons behind him each time he performs an action. Once a dragon's damage has been doubled, it is not doubled again for subsequent turns.)
 
 There can be only one true king. Any king instantiated beyond the first one is an impostor, and should have its armor reduced to 0 upon taking its first action, without doubling any dragon's damage or throwing anything. If an impostor dies, the game should still continue as normal.
