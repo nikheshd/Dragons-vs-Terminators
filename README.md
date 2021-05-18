@@ -1,7 +1,7 @@
 # Dragons-vs-Terminators
 A tower defense game
 
-(Extract the .rar file, extract it and run 'python3 gui.py' from that directory to start the game's webUI)
+(Download the .rar file, extract it and run 'python3 gui.py' from that directory to start the game's webUI)
 
 Note: Don't press restart in the webUI to play again (causing glitches in the UI making terminators move invisibly).
 To restart, refresh the browser.
@@ -40,7 +40,7 @@ Dragon types:
 (It will select a random Terminator from its place and eat it whole. After eating a Terminator, it must spend 3 turns digesting before eating again. If there is no terminator available to eat, it will do nothing)
 
 7. NinjaDragon: Food=5, Armor=1
-(It does not block the path of a Terminator that flies by but deals damage=1to all that fly past)
+(It does not block the path of a Terminator that flies by but deals damage=1 to all that fly past)
 
 Note: By default, all dragons block the path of a Terminator that flies by.
 
