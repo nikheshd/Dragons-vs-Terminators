@@ -1,7 +1,7 @@
 # Dragons-vs-Terminators
 A tower defense game
 
-(Download the dragons_final.rar file, extract it and run 'python3 gui.py' from that directory to start the game's webUI)
+(Download the dragons_final.rar file in dragons_game, extract it and run 'python3 gui.py' from that directory to start the game's webUI)
 
 Note: Don't press restart in the webUI to play again (causing glitches in the UI making terminators move invisibly).
 To restart, refresh the browser.
