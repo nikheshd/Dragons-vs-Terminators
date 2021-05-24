@@ -10,7 +10,8 @@ Also print the time it takes to get this nonce value.
 string input: athassin
 
 ### output:
-The magic number is 918687 \n
+The magic number is 918687
+
 The time taken to get this nonce value is 3.1101319789886475 sec
 
 ## Explanation:
