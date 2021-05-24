@@ -13,7 +13,7 @@ string input: athassin
 The magic number is 918687
 The time taken to get this nonce value is 3.1101319789886475 sec
 
-##Explanation:
+## Explanation:
 string+x is encoded into 'utf-8' and then passed to sha256 using hashlib to get hexadecimal output
 
 int of the target is compared with int of this hexadecimal output and the first x which satisfies the condition is printed
