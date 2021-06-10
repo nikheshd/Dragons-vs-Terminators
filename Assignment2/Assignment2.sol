@@ -66,11 +66,12 @@ contract Loan is MetaCoin {
         // https://medium.com/coinmonks/math-in-solidity-part-3-percents-and-proportions-4db014e080b1 just read the towards full proportion part.
         // A good way to prevent overflows will be to typecast principle, rate and the big number divider suggested in the above blogs as uint256 variables, just use uint256 R = rate;
 		uint256 r = rate;
+		principle*=1000;
 		for(uint i=0; i<time; i++){
 		    principle = principle*(100+r);
 		    principle/=100;
 		}
-	  	return principle;
+	  	return principle/1000;
     }
 
     function reqLoan(uint256 principle, uint rate, uint time) public returns(bool) {
