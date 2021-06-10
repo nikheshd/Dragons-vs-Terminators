@@ -58,20 +58,20 @@ contract Loan is MetaCoin {
 
     // Fill up the following function definitions and also try to justify why some functions are pure and some are view and some are none, in your README.md
 
-    function getCompoundInterest(uint256 principle, uint rate, uint time) public pure returns(uint256) {
+    function getCompoundInterest(uint principle, uint rate, uint time) public pure returns(uint256) {
     	// Anyone should be able to use this function to calculate the amount of Compound interest for given P, R, T
         // Solidity does not have a good support for fixed point numbers so we input the rate as a uint
         // A common way to perform division to calculate such percentages is mentioned here:
         // https://medium.com/coinmonks/math-in-solidity-part-4-compound-interest-512d9e13041b just read the periodic compounding part and
         // https://medium.com/coinmonks/math-in-solidity-part-3-percents-and-proportions-4db014e080b1 just read the towards full proportion part.
         // A good way to prevent overflows will be to typecast principle, rate and the big number divider suggested in the above blogs as uint256 variables, just use uint256 R = rate;
-		uint256 r = rate/100;
+		uint256 r = rate;
 		while (time > 0) {
 		    if (time % 2 == 1) {
-		    	principle += principle * r;
+		    	principle += (principle * r) /100;
 		      	time -= 1;
 		    } else {
-		      	r = 2 * r + r * r;
+		      	r = 2 * r + r * r / 100;
 		      	time /= 2;
 		    }
 	  	}
@@ -84,7 +84,7 @@ contract Loan is MetaCoin {
         // Add appropriate definition below to store the loan request of a contract in the loans mapping,
         // Also emit the Request event after succesfully adding to the mapping, and return true. Return false if adding to the mapping failed (maybe the user entered a float rate, there were overflows and toPay comes to be lesser than principle, etc.
 		if (toPay>=principle){
-			loans[Owner] = toPay;
+			loans[msg.sender] = toPay;
 			amt = toPay;
 			P = principle;
 			R = rate;
