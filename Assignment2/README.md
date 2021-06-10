@@ -21,29 +21,29 @@ There will be an Owner of the Loan contract, and he will have an initial balane 
 ## How to run
 Import the code to remix. Compile and deploy. All the functions work the same as they are stated above.
 
-### Inputs --- Outputs (in order):
-Address is Owner's
-getOwnerBalance()
-0: uint256: 100000
+### Inputs --- Outputs:
+Address is Owner's<br/>
+getOwnerBalance()<br/>
+0: uint256: 100000<br/>
 
 
-getCompoundInterest(100, 50 ,2)
-0: uint256: 225
+getCompoundInterest(100, 50 ,2)<br/>
+0: uint256: 225<br/>
 
 
-change address to creditor
-reqLoan(100, 50 ,2)
-0: bool: true
+change address to creditor<br/>
+reqLoan(100, 50 ,2)<br/>
+0: bool: true<br/>
 
 
-change address to Owner
-viewDues(creditor's address)
-0: uint256: 225
+change address to Owner<br/>
+viewDues(creditor's address)<br/>
+0: uint256: 225<br/>
 
 
-settleDues(creditor's address)
-0: bool: true
+settleDues(creditor's address)<br/>
+0: bool: true<br/>
 
 
-getOwnerBalance()
-0: uint256: 99775
+getOwnerBalance()<br/>
+0: uint256: 99775<br/>
