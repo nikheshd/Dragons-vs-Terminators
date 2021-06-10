@@ -106,10 +106,18 @@ contract Loan is MetaCoin {
 		return loans[creditor];
 	}
 
-	function settleDues(address creditor) public view isOwner returns(bool){
+	function settleDues(address creditor) public isOwner returns(bool){
 		uint256 topay = loans[creditor];
 		uint256 ownerbalance = getOwnerBalance();
-		return true;
+		if (ownerbalance<topay){
+		    sendCoin(creditor, ownerbalance, msg.sender);
+		    loans[creditor]-= ownerbalance;
+		    return false;
+		} else {
+		    sendCoin(creditor, topay, msg.sender);
+		    loans[creditor] = 0;
+		    return true;
+		}
 	}
 
     // implement viewDues and settleDues which allow *ONLY* the owner to *view* and *settle* his loans respectively.
