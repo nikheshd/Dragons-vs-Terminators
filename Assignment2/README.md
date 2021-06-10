@@ -16,3 +16,7 @@ There will be an Owner of the Loan contract, and he will have an initial balane 
 
 
 5. settleDues: only the owner can use this to settle the amount of loan he owes to the input address, use MetaCoin's sendCoin function to settle these dues, with appropriate checks for the return values from sendCoin. Also remember to set the amount owed to 0 or whatever remains if sendCoin runs succesfully!
+
+
+## How to run
+Import the code to remix. Compile and deploy. All the functions work as they are stated above.
