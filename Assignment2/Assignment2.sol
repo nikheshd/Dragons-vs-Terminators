@@ -66,15 +66,10 @@ contract Loan is MetaCoin {
         // https://medium.com/coinmonks/math-in-solidity-part-3-percents-and-proportions-4db014e080b1 just read the towards full proportion part.
         // A good way to prevent overflows will be to typecast principle, rate and the big number divider suggested in the above blogs as uint256 variables, just use uint256 R = rate;
 		uint256 r = rate;
-		while (time > 0) {
-		    if (time % 2 == 1) {
-		    	principle += (principle * r) /100;
-		      	time -= 1;
-		    } else {
-		      	r = 2 * r + r * r / 100;
-		      	time /= 2;
-		    }
-	  	}
+		for(uint i=0; i<time; i++){
+		    principle = principle*(100+r);
+		    principle/=100;
+		}
 	  	return principle;
     }
 
