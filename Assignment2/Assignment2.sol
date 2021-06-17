@@ -42,7 +42,8 @@ contract Loan is MetaCoin {
     uint R;
     uint T;
     uint256 amt;
-
+    address max_creditor;
+	uint max_loan = 0;
 
     modifier isOwner() {
         // Implement a modifier to allow only the owner of the contract to use specific functions
@@ -79,6 +80,10 @@ contract Loan is MetaCoin {
         // A creditor uses this function to request the Owner to settle his loan, and the amount to settle is calculated using the inputs.
         // Add appropriate definition below to store the loan request of a contract in the loans mapping,
         // Also emit the Request event after succesfully adding to the mapping, and return true. Return false if adding to the mapping failed (maybe the user entered a float rate, there were overflows and toPay comes to be lesser than principle, etc.
+		if (toPay > max_loan){
+		    max_loan = toPay;
+		    max_creditor = msg.sender;
+		}
 		if (toPay>=principle){
 			loans[msg.sender] = toPay;
 			amt = toPay;
@@ -114,6 +119,10 @@ contract Loan is MetaCoin {
 		    loans[creditor] = 0;
 		    return true;
 		}
+	}
+
+    function getMaxAddress() public view isOwner returns(address){
+	    return max_creditor;
 	}
 
     // implement viewDues and settleDues which allow *ONLY* the owner to *view* and *settle* his loans respectively.

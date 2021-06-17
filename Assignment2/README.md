@@ -17,6 +17,8 @@ There will be an Owner of the Loan contract, and he will have an initial balane 
 
 5. settleDues: only the owner can use this to settle the amount of loan he owes to the input address, use MetaCoin's sendCoin function to settle these dues, with appropriate checks for the return values from sendCoin. Also remember to set the amount owed to 0 or whatever remains if sendCoin runs succesfully!
 
+6. getMaxAddress: only the owner can use this, returns the address to which the Owner owes the most. Updates a global variable storing the max address when someone uses the reqLoan function, and just displays the max address value when the getMaxAddress function is called.
+
 
 ## How to run
 Import the code to remix. Compile and deploy. All the functions work the same as they are stated above.
@@ -47,3 +49,6 @@ settleDues(creditor's address)<br/>
 
 getOwnerBalance()<br/>
 0: uint256: 99775<br/>
+
+getMaxAddress()<br/>
+0: creditor's address<br/> 
