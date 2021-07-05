@@ -1,5 +1,6 @@
 # Dragons-vs-Terminators
 A tower defense game
+Python
 
 (Download the dragons_final.rar file in dragons_game, extract it and run 'python3 gui.py' from that directory to start the game's webUI)
 
