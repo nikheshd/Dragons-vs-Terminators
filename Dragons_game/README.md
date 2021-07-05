@@ -1,6 +1,5 @@
 # Dragons-vs-Terminators
-A tower defense game
-Python
+A tower defense game created in Python by Dwara Nikhesh Babu, UG, IIT Kanpur.
 
 (Download the dragons_final.rar file in dragons_game, extract it and run 'python3 gui.py' from that directory to start the game's webUI)
 
